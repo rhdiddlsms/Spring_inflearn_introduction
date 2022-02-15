@@ -1,5 +1,6 @@
 package gmchan.gmchan2;
 
+import gmchan.gmchan2.aop.TimeTraceAop;
 import gmchan.gmchan2.repository.*;
 import gmchan.gmchan2.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,4 +39,11 @@ public class SpringConfig {
 //        return new JdbcTemplateMemberRepository(dataSource); //jdbc 템플릿 사용
         return new JpaMemberRepositoty(em);
     }
+/*
+    //component scan 안썻을 때 써줘야됨
+    @Bean
+    public TimeTraceAop timeTraceAop(){
+        return new TimeTraceAop();
+    }
+*/
 }

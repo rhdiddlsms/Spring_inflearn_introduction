@@ -37,6 +37,13 @@ public class HelloController {
         return hello;
     }
 
+    /* `@ResponseBody`를 사용하면
+    *  `viewResolver` 대신에 `HttpMessageConverter`가 동작한다.
+    * 기본 문자처리는 `StringHttpMessageConverter`를 사용
+    * 기본 객체 처리는 'MappingJackson2HttpMessageConverter' 를 사용
+    * byte처리나 기타 등등 여러 'HttpMessageConverter' 가 등록이 되어있다.
+    * */
+
     static class Hello{
         private String name;
 
