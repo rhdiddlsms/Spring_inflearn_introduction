@@ -5,6 +5,8 @@ import gmchan.gmchan2.repository.MemberRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Commit;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -13,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 //테스트는 과감하게 한글로 바꿔도됨.
 
 @SpringBootTest
+@Transactional
 class MemberServiceIntegrationTest {
 
     @Autowired MemberService memberService;
@@ -23,7 +26,7 @@ class MemberServiceIntegrationTest {
     public void 회원가입() throws Exception {
         //Given
         Member member = new Member();
-        member.setName("hello");
+        member.setName("spring5000");
         //When
         Long saveId = memberService.join(member);
         //Then
