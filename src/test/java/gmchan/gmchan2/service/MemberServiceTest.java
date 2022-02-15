@@ -20,6 +20,7 @@ class MemberServiceTest {
         memberService = new MemberService(memberRepository);
     }
 
+    //메모리 DB에있는 데이터를 다음 메모리데이터에 영양 없게 하는 메서드
     @AfterEach
     public void afterEach() {
         memberRepository.clearStore();

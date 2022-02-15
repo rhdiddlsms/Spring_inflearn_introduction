@@ -29,7 +29,7 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepository() {
 //        return new MemoryMemberRepository(); //jdbc X 순수 데이터
-//        return new JdbcMemberRepository(dataSource); //jdbc 이용
-        return new JdbcTemplateMemberRepository(dataSource); //jdbc 템플릿 사용
+        return new JdbcMemberRepository(dataSource); //jdbc 이용
+//        return new JdbcTemplateMemberRepository(dataSource); //jdbc 템플릿 사용
     }
 }
